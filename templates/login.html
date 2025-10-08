@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%block title%}Iniciar sesión{%endblock%}
+{% block content%}
+
+<div class="conte_login">
+    <div id="conte_inicio">
+        <h1 class="mayus">iniciar sesión</h1>
+    </div>
+    <div id="conte_formlog">
+        <form action="" method="POST">
+            <div>
+                <label for="">Usuario</label>
+                <input type="text" name="usuario">
+            </div>
+            <div>
+                <label for="">Contraseña</label>
+                <input type="password" name="password">
+            </div>
+            <div>
+                <button>Ingresar</button>
+            </div>
+            <div>
+                <p>{{mensaje}} </p>
+            </div>
+        </form>
+    </div>
+    <script src="../static/js/script.js"></script>
+</div>
+    
+{%endblock%}

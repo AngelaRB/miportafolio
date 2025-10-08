@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{%block title%}Proyectos{%endblock%}
+{% block content%}
+<h1 class="cap">panel de administración</h1>
+<section class="sec_panel">
+    <div class="conte_panel">
+            <a href="{{url_for('ingresar_proyectos')}}">
+                <div>
+                    <p>agregar proyectos</p>
+                </div>
+            </a>
+            <a href="{{url_for('ingresar_habilidades')}} ">
+                <div>
+                    <p>agregar habilidades</p>
+                </div>
+            </a>
+            <a href="{{url_for('proyectos')}}">
+                <div>
+                    <p>Proyectos</p>
+                </div>
+            </a>
+            <a href="{{url_for('inicio')}}">
+                <div>
+                    <p>Habilidades</p>
+                </div>
+            </a>
+            <a href="{{url_for('tabla_contactos')}} ">
+                <div>
+                    <p>Datos de contacto</p>
+                </div>
+            </a>
+            <a href="{{url_for('tabla_footer')}} ">
+                <div>
+                    <p>Datos de footer</p>
+                </div>
+            </a>
+    </div>
+    <script src="../static/js/script.js"></script>
+</section>
+
+{%endblock%}

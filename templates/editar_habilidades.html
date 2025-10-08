@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{%block title%}Actualizar habilidades{%endblock%}
+{% block content%}
+
+<div class="conte_proyecto">
+    <div class="contenedor_formulario">
+    <form action="{{ url_for('editar_hab', id=habilidad['id']) }}" method="POST">
+        <div class="contenedor_campo">
+            <label for="">Nombre</label>
+            <input type="text" name="habilidad" value="{{ habilidad['habilidad'] }}" required>
+        </div>
+        <div class="contenedor_campo">
+            <label for="">Descripción</label>
+            <textarea name="descripcion">{{habilidad['descripcion']}} </textarea>
+        </div>
+        <div class="contenedor_campo">
+            <label for="">Icono</label>
+            <input type="text" name="icono" value="{{ habilidad['icono'] }}" required>
+        </div>
+        <div>
+            <button type="submit">Guardar cambios</button>
+        </div>
+    </form>
+    <script src="../static/js/script.js"></script>
+</div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{%block title%}Ingresar habilidades{%endblock%}
+{% block content%}
+
+<div class="conte_proyecto">
+    <div class="contenedor_formulario" id="conte_addhab">
+    <form action="{{url_for('ingresar_habilidades')}}" method="POST" enctype="multipart/form-data">
+        <div class="contenedor_campo">
+            <label for="">Nombre</label>
+            <input type="text" name="habilidad" required>
+        </div>
+        <div class="contenedor_campo">
+            <label for="">Descripción</label>
+            <textarea name="descripcion"></textarea>
+        </div>
+        <div class="contenedor_campo">
+            <label for="">Icono (.svg)  </label>
+            <input type="file" name="icono" required>
+        </div>
+        <div>
+            <button type="submit">Ingresar</button>
+        </div>
+    </form>
+</div>
+</div>
+<script src="../static/js/script.js"></script>
+{%endblock%}

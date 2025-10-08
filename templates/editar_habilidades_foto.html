@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{%block title%}Cambiar icono de habilidades{%endblock%}
+{% block content%}
+
+<body>
+    <div>
+        <h2>Editar imagen</h2>
+            <form action="{{ url_for('editar_hab_foto', id=habilidad['id']) }}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="icono" accept="image/*" required>
+                <button type="submit">Guardar cambios</button>
+            </form>
+            {% if icono %}
+                <h3>Imagen actual:</h3>
+                    <img src="{{ url_for('static', filename='uploads/' ~ habilidad['icono']) }}" alt="Imagen actual" width="200">
+            {% endif %}
+    </div>
+    <script src="../static/js/script.js"></script>
+</body>
+{%endblock%}

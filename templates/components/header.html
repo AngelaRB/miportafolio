@@ -1,0 +1,97 @@
+
+<div id="btn_navbar">
+    <div class="btnMenu">
+        <button id="btnMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+        </button>
+    </div>
+    <div class="barra_nav no_navbar" id="navbar">
+        <nav class="nav_principal">
+            <div class="milogo">
+            {% if session.get('usuario') %}
+                <a href="{{url_for('panel')}}">
+                    <img src="../../static/Imágenes/AR logo2.png" alt="">
+                </a>
+                {%else%}
+                <a href="{{url_for('login')}}">
+                    <img src="../../static/Imágenes/AR logo2.png" alt="">
+                </a>
+                {%endif%}
+            </div>
+
+            {% if session.get('usuario') %}
+            <div>
+                <a href="{{url_for('logout')}}">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M15 12h-12l3 -3" /><path d="M6 15l-3 -3" /></svg>
+                </a>
+            </div>
+            {%endif%}
+
+            
+            
+            <div class="nav">
+                <a href="{{ url_for('inicio') }}">Inicio</a>
+            </div>
+            <div class="nav">
+                <a href="{{ url_for('nosotros')}}">Sobre mí</a>
+            </div>
+            <div class="nav">
+                <a href="{{ url_for('proyectos')}}">proyectos</a>
+            </div>
+            <div class="nav">
+                <a href="{{url_for('contacto')}}">contactos</a>
+            </div>
+        </nav>
+        <nav class="nav_redes">
+                <a href="https://www.facebook.com/profile.php?id=100092163343571" target="_blank">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                </a>
+                <a href="https://www.instagram.com/angelarb08_/?next=%2F" target="_blank">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg>
+                </a>
+                <a href="https://www.tiktok.com/@ngela08rb" target="_blank">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" /></svg>
+                </a> 
+    </nav>
+    </div>
+</div>
+
+
+ 
+{% if index %}
+    {% if session.get('usuario') %}
+    {% else %}
+    <div class="fondo_header">   
+        <div class="conte_header">
+            <div class="conte_header2">
+                <header>
+                <h1 class="titulo_principal">
+                    ángela romero<br><span>aprendiz y desarrolladora web</span>
+                </h1>
+            </header>
+            <div class="conte_ubi">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" width="72" height="72" stroke-width="1.25">
+                            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                            <path d="M11.87 21.48a1.992 1.992 0 0 1 -1.283 -.58l-4.244 -4.243a8 8 0 1 1 13.355 -3.474">
+                            </path>
+                            <path d="M15 19l2 2l4 -4"></path>
+                    </svg>
+                </div>
+                <div clase="ubi">
+                    <p>Saravena</p>
+                </div>
+            </div>
+            <div class="centrar_boton" id="btn_header">
+            <a href="https://api.whatsapp.com/send?phone=573043730932&amp;text= hola! Te has contactado desde mi portafolio. En qué te puedo ayudar? ."target="_blank">
+                <button class="boton_contactar">contactar</button>
+            </a>
+            </div>
+            </div>
+        </div>
+    </div>
+    {%endif%}
+{%endif%}

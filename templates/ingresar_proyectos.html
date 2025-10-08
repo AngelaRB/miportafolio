@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{%block title%}Ingresar proyecto{%endblock%}
+{% block content%}
+
+<div class="conte_proyecto">
+    <div class="contenedor_formulario">
+    <form action="{{ url_for('ingresar_proyectos' )}}" method="POST" enctype="multipart/form-data">
+        <div class="contenedor_campo">
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" required>
+        </div>
+        <div class="contenedor_campo">
+            <label for="">Descripcion</label>
+            <textarea name="descripcion"></textarea>
+        </div>
+        <div class="contenedor_campo">
+            <label for="">Imagen</label>
+            <input type="file" name="imagen" accept="image/*" required>
+        </div>
+        <div class="contenedor_campo">
+            <label for="">Link a github</label>
+            <input type="text" name="link_git" required>
+        </div>
+        <div class="contenedor_campo">
+            <label for="">Link al proyecto</label>
+            <input type="text" name="link_proyecto" required>
+        </div>
+        <div>
+            <button type="submit">Ingresar</button>
+        </div>
+    </form>
+</div>
+<script src="../static/js/script.js"></script>
+</div>
+
+{%endblock%}
