@@ -313,4 +313,4 @@ def logout():
     session.pop("usuario", None)
     return redirect(url_for("inicio"))
 
-app.run(debug=True)
+#app.run(debug=True)
