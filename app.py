@@ -121,7 +121,6 @@ def editar_pro(id):
         link_proyecto = request.form.get('link_proyecto')
         
         query = 'UPDATE proyectos SET nombre = %s, descripcion = %s, imagen = %s, link_git = %s, link_proyecto = %s WHERE id = %s'
-        
         parametros = (nombre, descripcion, imagen, link_git, link_proyecto, id)
         
         projects = insertar(query,parametros)
@@ -208,7 +207,7 @@ def form_wp():
     footer = insertar(query,parametros)
     
     
-    return redirect(url_for('tabla_footer'))
+    return redirect(url_for('inicio'))
 
 @app.route('/contacto')
 def contacto():
@@ -225,7 +224,7 @@ def procesar_contacto():
     respuesta = insertar(query,parametros)
     print(respuesta)
     
-    return redirect(url_for('tabla_contactos'))
+    return redirect(url_for('contacto'))
 
 @app.route('/tabla_contactos')
 def tabla_contactos():
@@ -313,4 +312,4 @@ def logout():
     session.pop("usuario", None)
     return redirect(url_for("inicio"))
 
-#app.run(debug=True)
+app.run(debug=True)
